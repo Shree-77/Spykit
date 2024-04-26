@@ -1,5 +1,5 @@
-# leadsbee-responsive
-Leadsbee is a agency website. It's fully responsive. 
+# SpyKit-responsive
+SpyKit is a agency website. It's fully responsive. 
 # Technology used : 
 1. HTML 5
 2. CSS 3
