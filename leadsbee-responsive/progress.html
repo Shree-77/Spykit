@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Progress</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    .progress-bar {
+      background-color: #ddd;
+      border-radius: 5px;
+      margin-bottom: 20px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .progress-bar-inner {
+      background-color: #4caf50;
+      height: 20px;
+      width: 50%; /* Change this width dynamically with JavaScript */
+    }
+
+    .progress-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: #000;
+    }
+
+    .tasks {
+      margin-bottom: 20px;
+    }
+
+    .tasks h2 {
+      margin-bottom: 10px;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    ul li {
+      margin-bottom: 5px;
+    }
+
+    .remaining-tasks {
+      color: #ff0000;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Project Progress - Project Title</h1>
+    
+    <div class="progress-bar">
+      <div class="progress-bar-inner" id="progress-bar"></div>
+      <div class="progress-text" id="progress-text">50% out of 100%</div>
+    </div>
+
+    <div class="tasks">
+      <h2>Completed Tasks</h2>
+      <ul id="completed-tasks">
+        <li>Task 1</li>
+        <li>Task 2</li>
+        <li>Task 3</li>
+      </ul>
+    </div>
+
+    <div class="tasks">
+      <h2 class="remaining-tasks">Remaining Tasks</h2>
+      <ul id="remaining-tasks">
+        <li>Task 4</li>
+        <li>Task 5</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <script>
+    // Calculate and update progress percentage
+    const completedTasks = document.getElementById('completed-tasks').getElementsByTagName('li').length;
+    const remainingTasks = document.getElementById('remaining-tasks').getElementsByTagName('li').length;
+    const totalTasks = completedTasks + remainingTasks;
+    const progressBar = document.getElementById('progress-bar');
+    const progressPercentage = (completedTasks / totalTasks) * 100;
+    const progressText = document.getElementById('progress-text');
+    progressBar.style.width = `${progressPercentage}%`;
+    progressText.innerText = `${progressPercentage.toFixed(0)}% out of 100%`;
+  </script>
+</body>
+</html>
